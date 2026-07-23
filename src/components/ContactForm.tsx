@@ -30,7 +30,7 @@ export function ContactForm({ className = '', onSubmit }: ContactFormProps) {
           <label className="text-[15px] text-white/90 font-light block">Your Phone</label>
           <div className="flex gap-3">
             <select
-              className="w-32 bg-transparent border-b border-white/20 pb-4 text-white/90 text-sm focus:outline-none focus:border-blue-500 hover:border-blue-500/50 transition-colors"
+              className="w-32 bg-transparent border-b border-white/20 px-3 py-3 text-white text-sm appearance-none focus:outline-none focus:border-blue-500 hover:border-blue-500/50 transition-colors"
               aria-label="Country code"
             >
               <option value="+1">US +1</option>
