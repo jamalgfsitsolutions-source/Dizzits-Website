@@ -28,11 +28,25 @@ export function ContactForm({ className = '', onSubmit }: ContactFormProps) {
         </div>
         <div className="space-y-4">
           <label className="text-[15px] text-white/90 font-light block">Your Phone</label>
-          <input
-            type="tel"
-            placeholder="Enter your phone number"
-            className="w-full bg-transparent border-b border-white/20 pb-4 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 hover:border-blue-500/50 transition-colors text-sm font-light"
-          />
+          <div className="flex gap-3">
+            <select
+              className="w-32 bg-transparent border-b border-white/20 pb-4 text-white/90 text-sm focus:outline-none focus:border-blue-500 hover:border-blue-500/50 transition-colors"
+              aria-label="Country code"
+            >
+              <option value="+1">US +1</option>
+              <option value="+44">UK +44</option>
+              <option value="+91">IN +91</option>
+              <option value="+61">AU +61</option>
+              <option value="+49">DE +49</option>
+              <option value="+81">JP +81</option>
+              <option value="+971">AE +971</option>
+            </select>
+            <input
+              type="tel"
+              placeholder="Enter your phone number"
+              className="flex-1 bg-transparent border-b border-white/20 pb-4 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 hover:border-blue-500/50 transition-colors text-sm font-light"
+            />
+          </div>
         </div>
       </div>
 
