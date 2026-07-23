@@ -4,7 +4,11 @@ import { ArrowUpRight } from './Icons';
 import { services } from '../data/services';
 import { ChevronDown } from 'lucide-react';
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenContact: () => void;
+}
+
+export function Navbar({ onOpenContact }: NavbarProps) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -73,7 +77,11 @@ export function Navbar() {
             </a>
           );
         })}
-        <button className="bg-white text-black px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300 ml-2">
+        <button
+          type="button"
+          onClick={onOpenContact}
+          className="bg-white text-black px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300 ml-2"
+        >
           Start a Project
           <ArrowUpRight className="w-4 h-4" />
         </button>

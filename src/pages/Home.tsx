@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
   GlobeIcon,
 } from "../components/Icons";
+import { ContactForm } from '../components/ContactForm';
 import { services } from '../data/services';
 import pulseStudioImg from "../assets/images/pulse_studio_website_mockup_1784589258167.jpg";
 
@@ -20,7 +21,11 @@ const sharedMotion = {
   transition: { duration: 0.8, ease: "easeOut" },
 };
 
-export function Home() {
+interface HomeProps {
+  onOpenContact: () => void;
+}
+
+export function Home({ onOpenContact }: HomeProps) {
   const container = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const heroContentRef = useRef<HTMLDivElement>(null);
@@ -363,15 +368,16 @@ export function Home() {
                   ))}
               </h1>
 
-              <motion.a
+              <motion.button
                 {...sharedMotion}
                 transition={{ ...sharedMotion.transition, delay: 0.4 }}
-                href="#"
-                className="group flex items-center gap-4 text-xs md:text-[11px] font-bold tracking-[0.2em] uppercase text-white pb-2 border-b border-white/30 hover:border-white transition-colors"
+                type="button"
+                onClick={onOpenContact}
+                className="group inline-flex items-center gap-4 text-xs md:text-[11px] font-bold tracking-[0.2em] uppercase text-white pb-2 border-b border-white/30 hover:border-white transition-colors"
               >
                 Start a Project
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-              </motion.a>
+              </motion.button>
             </div>
 
             {/* Bottom Row */}
